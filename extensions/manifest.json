@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "My Custom Script Loader",
+    "version": "1.0",
+    "description": "Load custom JS/CSS on specific site refresh",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://chat.deepseek.com/*"], 
+        "js": ["deepseek.js"],      
+        "css": ["deepseek.css"]     
+      },
+      {
+        "matches": ["https://monica.im/*"], 
+        "js": ["monica.js"],      
+        "css": ["monica.css"]     
+      },
+      {
+        "matches": ["https://chatgpt.com//*"], 
+        "css": ["chatgpt.css"]     
+      }
+    ]
+  }
+
+  
