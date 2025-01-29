@@ -1,3 +1,9 @@
-.text-token-text-secondary .min-h-4 div{
+.text-token-text-secondary .min-h-4 div,.draggable .flex-col .py-2,.absolute.bottom-full.left-0.right-0.z-20{
     display: none;
+}
+
+
+
+div.m-auto{
+    margin-bottom: -10px !important;
 }
