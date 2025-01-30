@@ -5,9 +5,14 @@
     font-style: normal;
 }
 
-.md-code-block,.md-code-blockfira {
+strong,.ds-markdown p,.token.comment,h1,h2,h3,h4,h5,h6,.fbb737a4{
+    font-family: iransans;
+}
+
+
+.md-code-block,.md-code-blockfira,.token {
     direction: ltr;
-    font-family: 'FiraCode' !important;
+    font-family: 'FiraCode';
 }
 .a1e75851,.be88ba8a,.e886deb9,[data-ds-dark-theme] .fcaa63f8{
     display: none!important;
