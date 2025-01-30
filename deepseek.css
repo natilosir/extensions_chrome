@@ -5,10 +5,13 @@
     font-style: normal;
 }
 
-strong,.ds-markdown p,.token.comment,h1,h2,h3,h4,h5,h6,.fbb737a4{
-    font-family: iransans;
+strong,.ds-markdown p,.token.comment,h1,h2,h3,h4,h5,h6,.fbb737a4,.cefa5c26 .c92459f0{
+    font-family: 'iransans' !important;
 }
 
+.cefa5c26 .c92459f0{
+    margin-left: -9px !important;
+}
 
 .md-code-block,.md-code-blockfira,.token {
     direction: ltr;
