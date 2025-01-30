@@ -1,9 +1,22 @@
+@font-face {
+    font-family: 'FiraCode';
+    src: url('https://dl.natilos.ir/ffff/FiraCode-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .text-token-text-secondary .min-h-4 div,.draggable .flex-col .py-2,.absolute.bottom-full.left-0.right-0.z-20{
     display: none;
 }
 
-
-
 div.m-auto{
     margin-bottom: -10px !important;
+}
+
+code{
+    font-family: FiraCode;
+}
+
+strong,.markdown p,ul,h1,h2,h3,h4,h5,h6,.whitespace-pre-wrap,.hljs-comment,.whitespace-nowrap{
+    font-family: iransans;
 }
