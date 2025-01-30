@@ -15,7 +15,7 @@ document.body.appendChild(button);
 const dynamicStyles = document.createElement('style');
 dynamicStyles.id = 'dynamicStyles';
 dynamicStyles.innerHTML = `
-    .f9bf7997, .fbb737a4 {
+    .f9bf7997, .fbb737a4, .c92459f0 {
         direction: rtl;
     }
 `;
