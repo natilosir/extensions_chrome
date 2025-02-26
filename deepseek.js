@@ -30,19 +30,16 @@ document.head.appendChild(dynamicStyles);
 
 let isRTL = true;
 
-const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-        if (mutation.type === 'childList') {
-            const textarea = document.getElementById('chat-input');
-            if (textarea) {
-                Placeholder('چی میقای؟');
-                observer.disconnect();
-            }
-        }
-    });
-});
+let counter = 0;
 
-observer.observe(document.body, { childList: true, subtree: true });
+const interval = setInterval(() => {
+    Placeholder('چی میقای؟');
+    counter++;
+
+    if (counter === 2) {
+        clearInterval(interval); // متوقف کردن اجرای تابع
+    }
+}, 99);
 
 button.addEventListener('click', function () {
     if (isRTL) {
@@ -68,7 +65,25 @@ window.onload = function () {
 
 
 document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('b64fb9ae')) {
-        Placeholder('چی میقای؟');
+    const target = event.target;
+
+    if (
+        target.classList.contains('f9edaa3c') ||
+        target.classList.contains('ec92d1d3') ||
+        target.classList.contains('e066abb8') ||
+        target.classList.contains('c08e6e93') ||
+        target.closest('.e066abb8 svg')
+    ) {
+        let counter = 0;
+
+        const interval = setInterval(() => {
+            const message = target.closest('.e066abb8 svg') ? 'چی میقای؟' : 'دیگه چی میقای؟';
+            Placeholder(message);
+            counter++;
+
+            if (counter === 2) {
+                clearInterval(interval);
+            }
+        }, 20);
     }
 });
