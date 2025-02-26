@@ -8,9 +8,9 @@
     ],
     "content_scripts": [
       {
-        "matches": ["https://chat.deepseek.com/*"], 
-        "js": ["deepseek.js"],      
-        "css": ["deepseek.css"]     
+        "matches": ["https://chat.deepseek.com/*"],
+        "js": ["jquery.js", "deepseek.js"],
+        "css": ["deepseek.css"]
       },
       {
         "matches": ["https://monica.im/*"], 
