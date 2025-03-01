@@ -9,7 +9,7 @@
     "content_scripts": [
       {
         "matches": ["https://chat.deepseek.com/*"],
-        "js": ["jquery.js", "deepseek.js"],
+        "js": ["deepseek.js"],
         "css": ["deepseek.css"]
       },
       {

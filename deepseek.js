@@ -87,3 +87,20 @@ document.addEventListener('click', function (event) {
         }, 20);
     }
 });
+
+
+
+const observer = new MutationObserver(function(mutations) {
+    const textarea = document.getElementById('chat-input');
+    if (textarea) {
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' || event.keyCode === 27) {
+                textarea.focus();
+            }
+        });
+        observer.disconnect(); 
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
