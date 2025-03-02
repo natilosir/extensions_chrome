@@ -17,6 +17,6 @@ code{
     font-family: FiraCode;
 }
 
-strong,.markdown p,ul,h1,h2,h3,h4,h5,h6,.whitespace-pre-wrap,.hljs-comment,.whitespace-nowrap{
+.text-token-text-primary, strong,.markdown p,ul,h1,h2,h3,h4,h5,h6,.whitespace-pre-wrap,.hljs-comment,.whitespace-nowrap{
     font-family: iransans;
 }

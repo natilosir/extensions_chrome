@@ -18,8 +18,12 @@
         "css": ["monica.css"]     
       },
       {
-        "matches": ["https://chatgpt.com/*"], 
-        "css": ["chatgpt.css"]     
+        "matches": ["https://chatgpt.com/*"],
+        "css": ["chatgpt.css"]
+      },
+      {
+        "matches": ["https://chat.qwen.ai/*"],
+        "css": ["qwen.css"]
       }
     ]
   }
