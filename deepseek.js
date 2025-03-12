@@ -22,8 +22,10 @@ document.body.appendChild(button);
 const dynamicStyles = document.createElement('style');
 dynamicStyles.id = 'dynamicStyles';
 dynamicStyles.innerHTML = `
-    .f9bf7997, .fbb737a4, .c92459f0, .ds-textarea__textarea {
-        direction: rtl;
+    .f9bf7997, .fbb737a4, .c92459f0, .ds-textarea__textarea ,table, th, td, tr{
+        direction: rtl !important;
+        text-align: right !important;
+
     }
 `;
 document.head.appendChild(dynamicStyles);
@@ -37,7 +39,7 @@ const interval = setInterval(() => {
     counter++;
 
     if (counter === 2) {
-        clearInterval(interval); // متوقف کردن اجرای تابع
+        clearInterval(interval);
     }
 }, 99);
 
@@ -49,8 +51,10 @@ button.addEventListener('click', function () {
     } else {
         Placeholder('چی میقای؟');
         dynamicStyles.innerHTML = `
-            .f9bf7997, .fbb737a4, .c92459f0, .ds-textarea__textarea {
-                direction: rtl;
+            .f9bf7997, .fbb737a4, .c92459f0, .ds-textarea__textarea ,table, th, td, tr{
+                direction: rtl !important;
+                text-align: right !important;
+
             }
         `;
         button.innerText = 'LTR';
