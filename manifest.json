@@ -1,13 +1,14 @@
 {
     "manifest_version": 3,
-    "name": "My Custom Script Loader",
+    "name": "Natilos.ir",
     "version": "1.0",
-    "description": "Load custom JS/CSS on specific site refresh",
+    "description": "AI",
     "permissions": [
       "activeTab"
     ],
     "content_scripts": [
-      {
+     
+      { 
         "matches": ["https://chat.deepseek.com/*"],
         "js": ["deepseek.js"],
         "css": ["deepseek.css"]
