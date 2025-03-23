@@ -22,7 +22,7 @@ document.body.appendChild(button);
 const dynamicStyles = document.createElement('style');
 dynamicStyles.id = 'dynamicStyles';
 dynamicStyles.innerHTML = `
-    .f9bf7997, .fbb737a4, ._27c9245, .ds-textarea__textarea,.ds-markdown ,.ds-markdown--block ,table, th, td, tr{
+    .f9bf7997, .fbb737a4, .dad65929, .ds-textarea__textarea,.ds-markdown ,.ds-markdown--block ,table, th, td, tr{
         direction: rtl !important;
         text-align: right !important;
 
@@ -51,7 +51,7 @@ button.addEventListener('click', function () {
     } else {
         Placeholder('چی میقای؟');
         dynamicStyles.innerHTML = `
-    .f9bf7997, .fbb737a4, ._27c9245, .ds-textarea__textarea,.ds-markdown ,.ds-markdown--block ,table, th, td, tr{
+    .f9bf7997, .fbb737a4, .dad65929, .ds-textarea__textarea,.ds-markdown ,.ds-markdown--block ,table, th, td, tr{
                 direction: rtl !important;
                 text-align: right !important;
 
