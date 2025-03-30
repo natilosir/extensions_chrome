@@ -1,0 +1,88 @@
+/* استایل پایه منو */
+.nav_1 {
+    background: #ffffff;
+    padding: 8px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* استایل آیتم‌های منو */
+.nav_1 li {
+    margin: 4px 12px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.nav_1 li a {
+    display: block;
+    padding: 12px 20px;
+    color: #444 !important;
+    text-decoration: none;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    border-right: 4px solid transparent;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* آیتم رزرو هفته بعد (گرادیان قرمز ملایم) */
+.nav_1 li:nth-child(6) a {
+    background: linear-gradient(to right, 
+                rgba(255, 230, 230, 0.8) 0%, 
+                rgba(255, 245, 245, 0.3) 70%);
+    border-right: 4px solid #ff9999;
+    color: #cc3333 !important;
+}
+
+/* آیتم رزرو هفته جاری (گرادیان سبز ملایم) */
+.nav_1 li:nth-child(8) a {
+    background: linear-gradient(to right, 
+                rgba(230, 255, 230, 0.8) 0%, 
+                rgba(245, 255, 245, 0.3) 70%);
+    border-right: 4px solid #99cc99;
+    color: #339933 !important;
+}
+
+/* افکت hover نرم */
+.nav_1 li:hover {
+    transform: translateX(-6px);
+}
+
+.nav_1 li a:hover {
+    color: white !important;
+    background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+    border-right-color: #0099ff;
+}
+
+/* هاور برای آیتم‌های خاص */
+.nav_1 li:nth-child(6) a:hover {
+    background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%) !important;
+    border-right-color: #ff9999;
+}
+
+.nav_1 li:nth-child(8) a:hover {
+    background: linear-gradient(135deg, #00aa44 0%, #008833 100%) !important;
+    border-right-color: #66ff66;
+}
+
+/* افکت overlay برای نرمی بیشتر */
+.nav_1 li a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.nav_1 li a:hover::after {
+    width: 100%;
+}

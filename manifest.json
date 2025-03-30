@@ -25,6 +25,10 @@
       {
         "matches": ["https://chat.qwen.ai/*"],
         "css": ["qwen.css"]
+      },
+      {
+        "matches": ["https://food.gau.ac.ir/*"],
+        "css": ["gau.css"]
       }
     ]
   }
