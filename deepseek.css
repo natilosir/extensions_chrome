@@ -11,7 +11,7 @@ strong,.ds-textarea .ds-textarea__textarea,.ds-markdown p,.token.comment,h1,h2,h
 }
 
 :root {
-    --message-list-max-width: 870px !important;
+    --message-list-max-width: 970px !important;
 }
 .dd442025 {
     opacity: 0.8;}
@@ -27,7 +27,11 @@ width: 99% !important;
 .md-code-block,.md-code-blockfira,.token {
 text-align: left;
 direction: ltr;
-font-family: 'FiraCode';
+font-family: 'FiraCode' !important;
+}
+
+code{
+    font-family: 'FiraCode' !important;
 }
 .ebaea5d2,._88681e8,._0fcaa63,.a1e75851,._2be88ba,._7eb2358{
 display: none!important;
