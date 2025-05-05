@@ -13,6 +13,9 @@
       ],
       "css": [
         "grok.css"
+      ],
+      "js": [
+        "grok.js"
       ]
     },
     {
@@ -54,6 +57,9 @@
       ],
       "css": [
         "qwen.css"
+      ],
+      "js": [
+        "qwen.js"
       ]
     },
     {

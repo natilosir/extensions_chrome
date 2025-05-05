@@ -1,10 +1,17 @@
-
 .break-words {
     font-family: 'iransans' !important;
 }
 
-code, kbd, pre, samp, .\!font-mono, code {
-    text-align: left;
-    direction: ltr;
+code, kbd, pre, samp, code {
+    text-align: left !important;
+    direction: ltr !important;
     font-family: 'Fira Code' !important;
 }
+
+.not-prose, .not-prose *, .font-mono, code {
+    direction: ltr !important;
+    text-align: left !important;
+    font-family: 'Fira Code' !important;
+    unicode-bidi: embed;
+}
+
