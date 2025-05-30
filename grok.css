@@ -1,4 +1,4 @@
-.break-words {
+.prose :where(h3):not(:where([class~=not-prose],[class~=not-prose] *)), .break-words {
     font-family: 'iransans' !important;
 }
 
@@ -6,12 +6,22 @@ code, kbd, pre, samp, code {
     text-align: left !important;
     direction: ltr !important;
     font-family: 'Fira Code' !important;
+    font-feature-settings: "calt" 1 !important;
+    font-variant-ligatures: contextual-alternates !important;
+    text-rendering: optimizeLegibility !important;
 }
 
-.not-prose, .not-prose *, .font-mono, code {
+.dark\:text-orange-200:is(.dark *), .not-prose, .not-prose *, .font-mono {
     direction: ltr !important;
     text-align: left !important;
     font-family: 'Fira Code' !important;
     unicode-bidi: embed;
+    font-feature-settings: "calt" 1 !important;
+    font-variant-ligatures: contextual-alternates !important;
+    text-rendering: optimizeLegibility !important;
 }
 
+.w-full.max-w-3xl {
+    max-width: 1000px !important;
+    width: 1000px !important;
+}

@@ -5,11 +5,13 @@
     font-style: normal;
 }
 
-.skill-toolbar--vTMzE,.chat-toolbar--P42Bd{
-    display: none!important;
+.skill-toolbar--vTMzE, .chat-toolbar--P42Bd {
+    display: none !important;
 }
 
 pre {
     direction: ltr;
     font-family: 'FiraCode' !important;
 }
+
+
