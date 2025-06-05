@@ -25,3 +25,12 @@ code, kbd, pre, samp, code {
     max-width: 1000px !important;
     width: 1000px !important;
 }
+
+.bg-background {
+    background: none !important;
+
+}
+
+div.relative.w-full.sm\:px-5.px-2.pb-2.sm\:pb-4 {
+    padding-bottom: 0 !important;
+}
