@@ -34,3 +34,7 @@ code, kbd, pre, samp, code {
 div.relative.w-full.sm\:px-5.px-2.pb-2.sm\:pb-4 {
     padding-bottom: 0 !important;
 }
+
+.col-span-1.xl\:col-span-2.h-full.overflow-auto.space-y-3.p-3.border-r.border-border {
+    font-family: IRANSans;
+}
