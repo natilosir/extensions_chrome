@@ -1,4 +1,7 @@
-.bg-token-bg-elevated-secondary, .text-token-text-secondary.relative.mt-auto.flex.min-h-8.w-full.items-center.justify-center.p-2.text-center.text-xs.md\:px-\[60px\], .text-token-text-secondary .min-h-4 div, .draggable .flex-col .py-2, .absolute.bottom-full.left-0.right-0.z-20 {
+.text-token-text-secondary.relative.mt-auto.flex.min-h-8.w-full.items-center.justify-center.p-2.text-center.text-xs.md\:px-\[60px\],
+.text-token-text-secondary .min-h-4 div,
+.draggable .flex-col .py-2,
+.absolute.bottom-full.left-0.right-0.z-20 {
     display: none;
 }
 

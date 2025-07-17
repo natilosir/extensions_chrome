@@ -69,6 +69,23 @@
       "css": [
         "gau.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.google.com/search*"
+      ],
+      "css": [
+        "google.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://fa.wikipedia.org/*"
+        //        "https://www.google.com/maps*"
+      ],
+      "css": [
+        "wikipedia.css"
+      ]
     }
   ]
 }
