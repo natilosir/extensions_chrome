@@ -81,7 +81,22 @@
     {
       "matches": [
         "https://fa.wikipedia.org/*"
-        //        "https://www.google.com/maps*"
+      ],
+      "css": [
+        "wikipedia.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "css": [
+        "x.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://fa.m.wikipedia.org/*"
       ],
       "css": [
         "wikipedia.css"

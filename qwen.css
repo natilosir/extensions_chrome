@@ -5,30 +5,30 @@
     font-style: normal;
 }
 
-.h-full ,form,.ͼw{
+.h-full, form, .ͼw {
     font-family: 'iransans' !important;
 }
 
 .pb-\[2rem\] {
-    padding-bottom: 0rem!important;
+    padding-bottom: 0rem !important;
 }
 
 .fixed.bottom-0.right-0.px-2.py-2.z-20,
 .line-clamp-1,
-.text-gray-600 img ,
-.px-1.mb-1.flex.justify-center.space-x-2.relative.z-10 ,
+.text-gray-600 img,
+.px-1.mb-1.flex.justify-center.space-x-2.relative.z-10,
 .w-full.py-1\.5.px-2.rounded-md.flex.items-center.gap-1\.5.text-xs,
-#UghVygv_PH{
-    display: none!important;
+#UghVygv_PH {
+    display: none !important;
 }
 
-.cm-line, .codespan{
+.cm-line, .codespan {
     font-size: 13px;
     text-align: left;
     direction: ltr;
-    font-family: 'FiraCode';
+    font-family: 'FiraCode' !important;
 }
 
-.bg-white.dark:bg-gray-900.px-4{
+.bg-white.dark:bg-gray-900.px-4 {
     opacity: 0.2;
 }

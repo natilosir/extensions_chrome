@@ -5,38 +5,45 @@
     font-style: normal;
 }
 
-strong,.ds-textarea .ds-textarea__textarea,.ds-markdown p,.token.comment,h1,h2,h3,h4,h5,h6,.fbb737a4,.cefa5c26 .c92459f0,
- .c08e6e93, ._27c9245, .ds-tooltip, td,tr,th,table{
+strong, .ds-textarea .ds-textarea__textarea, .ds-markdown p, .token.comment, h1, h2, h3, h4, h5, h6, .fbb737a4, .cefa5c26 .c92459f0,
+.c08e6e93, ._27c9245, .ds-tooltip, td, tr, th, table {
     font-family: 'iransans' !important;
 }
 
 :root {
     --message-list-max-width: 970px !important;
 }
+
 .dd442025 {
-    opacity: 0.8;}
+    opacity: 0.8;
+}
+
 ._871cbca, ._77cefa5 {
-background-color: transparent!important;}
-
-._77cefa5 ._27c9245, .dad65929{
-width: 99% !important;
+    background-color: transparent !important;
 }
 
-._4f9bf79{padding-left:0px !important;}
-
-.md-code-block,.md-code-blockfira,.token {
-text-align: left;
-direction: ltr;
-font-family: 'FiraCode' !important;
+._77cefa5 ._27c9245, .dad65929 {
+    width: 99% !important;
 }
 
-code{
+._4f9bf79 {
+    padding-left: 0px !important;
+}
+
+.md-code-block, .md-code-blockfira, .token {
+    text-align: left;
+    direction: ltr;
     font-family: 'FiraCode' !important;
 }
-.ebaea5d2,._88681e8,._0fcaa63,.a1e75851,._2be88ba,._7eb2358{
-display: none!important;
+
+code {
+    font-family: 'FiraCode' !important;
 }
 
-._871cbca{
-bottom: 8px;
+._5a8ac7a, .ebaea5d2, ._88681e8, ._0fcaa63, .a1e75851, ._2be88ba, ._7eb2358 {
+    display: none !important;
+}
+
+._871cbca {
+    bottom: 8px;
 }
