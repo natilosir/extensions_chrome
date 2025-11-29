@@ -1,0 +1,17 @@
+.footer__disclaimer {
+    display: none !important;
+}
+
+code, .cm-editor, pre, .cm-line {
+    text-align: left !important;
+    direction: ltr !important;
+    font-family: 'Fira Code' !important;
+    font-feature-settings: "calt" 1 !important;
+    font-variant-ligatures: contextual-alternates !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+.hljs-comment, .bg-user, [lang=fa] {
+    font-family: 'iransans' !important;
+
+}

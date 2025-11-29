@@ -96,6 +96,14 @@
     },
     {
       "matches": [
+        "https://gapgpt.app/*"
+      ],
+      "css": [
+        "gapgpt.css"
+      ]
+    },
+    {
+      "matches": [
         "https://fa.m.wikipedia.org/*"
       ],
       "css": [
