@@ -1,0 +1,20 @@
+pre.sf-dump {
+
+	font-family : 'fira code' !important;
+	direction   : ltr !important;
+}
+
+pre.sf-dump .sf-dump-default {
+	direction : ltr !important;
+}
+
+pre.sf-dump .sf-dump-note {
+	color     : #1299DA;
+	font-size : 12px;
+}
+
+.sf-dump * {
+	line-height : 16px;
+	font-size   : 11px;
+	font-family : 'fira code' !important;
+}

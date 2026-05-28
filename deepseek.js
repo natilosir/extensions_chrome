@@ -1,26 +1,26 @@
 function Placeholder(text) {
-    const textarea = document.getElementById('chat-input');
-    if (textarea) {
-        textarea.placeholder = text;
-    }
+	const textarea = document.getElementById( 'chat-input' );
+	if ( textarea ) {
+		textarea.placeholder = text;
+	}
 }
 
-const button = document.createElement('button');
-button.innerText = 'LTR';
-button.style.position = 'fixed';
-button.style.top = '10px';
-button.style.right = '10px';
-button.style.padding = '10px 20px';
-button.style.backgroundColor = '#4d6bfe';
-button.style.color = 'white';
-button.style.border = 'none';
-button.style.borderRadius = '14px';
-button.style.cursor = 'pointer';
+const button                 = document.createElement( 'button' );
+button.innerText             = 'LTR';
+button.style.position        = 'fixed';
+button.style.top             = '10px';
+button.style.right           = '10px';
+button.style.padding         = '10px 20px';
+button.style.backgroundColor = '#4D6BFE';
+button.style.color           = 'white';
+button.style.border          = 'none';
+button.style.borderRadius    = '14px';
+button.style.cursor          = 'pointer';
 
-document.body.appendChild(button);
+document.body.appendChild( button );
 
-const dynamicStyles = document.createElement('style');
-dynamicStyles.id = 'dynamicStyles';
+const dynamicStyles     = document.createElement( 'style' );
+dynamicStyles.id        = 'dynamicStyles';
 dynamicStyles.innerHTML = `
     ._27c9245,.f9bf7997, .fbb737a4, .dad65929, .ds-textarea__textarea,.ds-markdown ,.ds-markdown--block ,table, th, td, tr{
         direction: rtl !important;
@@ -28,89 +28,85 @@ dynamicStyles.innerHTML = `
 
     }
 `;
-document.head.appendChild(dynamicStyles);
+document.head.appendChild( dynamicStyles );
 
 let isRTL = true;
 
 let counter = 0;
 
-const interval = setInterval(() => {
-    Placeholder('چی میقای؟');
-    counter++;
+const interval = setInterval( () => {
+	Placeholder( 'چی میقای؟' );
+	counter ++;
 
-    if (counter === 2) {
-        clearInterval(interval);
-    }
-}, 99);
+	if ( counter === 2 ) {
+		clearInterval( interval );
+	}
+}, 99 );
 
-button.addEventListener('click', function () {
-    if (isRTL) {
-        Placeholder('what the fuck');
-        dynamicStyles.innerHTML = '';
-        button.innerText = 'RTL';
-    } else {
-        Placeholder('چی میقای؟');
-        dynamicStyles.innerHTML = `
+button.addEventListener( 'click', function() {
+	if ( isRTL ) {
+		Placeholder( 'what the fuck' );
+		dynamicStyles.innerHTML = '';
+		button.innerText        = 'RTL';
+	} else {
+		Placeholder( 'چی میقای؟' );
+		dynamicStyles.innerHTML = `
     ._27c9245,.f9bf7997, .fbb737a4, .dad65929, .ds-textarea__textarea,.ds-markdown ,.ds-markdown--block ,table, th, td, tr{
                 direction: rtl !important;
                 text-align: right !important;
 
             }
         `;
-        button.innerText = 'LTR';
-    }
+		button.innerText        = 'LTR';
+	}
 
-    isRTL = !isRTL;
-});
+	isRTL = !isRTL;
+} );
 
-window.onload = function () {
-    button.innerText = 'RTL';
+window.onload = function() {
+	button.innerText = 'RTL';
 };
 
 
-document.addEventListener('click', function (event) {
-    const target = event.target;
+document.addEventListener( 'click', function(event) {
+	const target = event.target;
 
-    if (
-        target.classList.contains('f9edaa3c') ||
-        target.classList.contains('ec92d1d3') ||
-        target.classList.contains('e066abb8') ||
-        target.classList.contains('c08e6e93') ||
-        target.closest('.e066abb8 svg')
-    ) {
-        let counter = 0;
+	if ( target.classList.contains( 'f9edaa3c' ) || target.classList.contains( 'ec92d1d3' ) || target.classList.contains( 'e066abb8' ) || target.classList.contains( 'c08e6e93' ) || target.closest( '.e066abb8 svg' ) ) {
+		let counter = 0;
 
-        const interval = setInterval(() => {
-            const message = target.closest('.e066abb8 svg') ? 'چی میقای؟' : 'دیگه چی میقای؟';
-            Placeholder(message);
-            counter++;
+		const interval = setInterval( () => {
+			const message = target.closest( '.e066abb8 svg' ) ? 'چی میقای؟' : 'دیگه چی میقای؟';
+			Placeholder( message );
+			counter ++;
 
-            if (counter === 2) {
-                clearInterval(interval);
-            }
-        }, 20);
-    }
-});
+			if ( counter === 2 ) {
+				clearInterval( interval );
+			}
+		}, 20 );
+	}
+} );
 
 
+const observer = new MutationObserver( function(mutations) {
+	const textarea = document.getElementById( 'chat-input' );
+	if ( textarea ) {
+		document.addEventListener( 'keydown', function(event) {
+			if ( event.key === 'Escape' || event.keyCode === 27 ) {
+				textarea.focus();
+			}
+		} );
+		observer.disconnect();
+	}
+} );
 
-const observer = new MutationObserver(function(mutations) {
-    const textarea = document.getElementById('chat-input');
-    if (textarea) {
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' || event.keyCode === 27) {
-                textarea.focus();
-            }
-        });
-        observer.disconnect(); 
-    }
-});
+observer.observe( document.body, {
+	childList: true,
+	subtree: true
+} );
 
-observer.observe(document.body, { childList: true, subtree: true });
-
-document.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.key === 'ArrowDown') {
-        const element = document.querySelector('._0e98de6');
-            element.click();
-    }
-});
+document.addEventListener( 'keydown', function(event) {
+	if ( event.ctrlKey && event.key === 'ArrowDown' ) {
+		const element = document.querySelector( '._0e98de6' );
+		// element.click();
+	}
+} );
