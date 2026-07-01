@@ -1,6 +1,6 @@
 document.addEventListener( 'DOMContentLoaded', function() {
 	// ---- تنظیمات ----
-	const SITE_URL = 'https://xcodestudio.test';
+	const SITE_URL = 'https://xcodestudio.ir';
 
 	// ---- المان‌های DOM ----
 	const usernameInput = document.getElementById( 'usernameInput' );
