@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+	<meta charset="UTF-8">
+	<title>ثبت زمان هوشمند</title>
+	<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css"/>
+	
+	<!-- Jalali Datepicker CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+	
+	<style>
+		:root {
+			--bg-color       : #F8FAFC;
+			--card-bg        : #FFFFFF;
+			--primary        : #6366F1;
+			--primary-light  : #EEF2FF;
+			--primary-hover  : #4F46E5;
+			--success        : #10B981;
+			--success-light  : #D1FAE5;
+			--success-hover  : #059669;
+			--danger         : #EF4444;
+			--danger-light   : #FEE2E2;
+			--danger-hover   : #DC2626;
+			--warning        : #F59E0B;
+			--text-main      : #1E293B;
+			--text-secondary : #64748B;
+			--text-muted     : #94A3B8;
+			--border-color   : #E2E8F0;
+			--border-hover   : #CBD5E1;
+			--shadow-sm      : 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+			--shadow         : 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+			--shadow-lg      : 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+			--shadow-xl      : 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+			--radius-sm      : 8px;
+			--radius         : 12px;
+			--radius-lg      : 16px;
+			--transition     : all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		* {
+			box-sizing : border-box;
+			margin     : 0;
+			padding    : 0;
+		}
+
+		body {
+			font-family : 'iransans', sans-serif;
+			background  : linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
+			color       : var(--text-main);
+			direction   : rtl;
+			width       : 700px;
+			height      : 900px;
+			padding     : 16px;
+			font-size   : 14px;
+			line-height : 1.6;
+		}
+
+		.app-container {
+			display        : flex;
+			flex-direction : column;
+			gap            : 16px;
+		}
+
+		.card {
+			background    : var(--card-bg);
+			border-radius : var(--radius);
+			box-shadow    : var(--shadow);
+			padding       : 20px;
+			transition    : var(--transition);
+			border        : 1px solid rgba(226, 232, 240, 0.6);
+		}
+
+		.card:hover {
+			box-shadow : var(--shadow-lg);
+		}
+
+		/* Login Styles */
+		.login-card {
+			text-align : center;
+		}
+
+		.login-card h2 {
+			font-size               : 20px;
+			font-weight             : 700;
+			margin-bottom           : 20px;
+			color                   : var(--primary);
+			background              : linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+			-webkit-background-clip : text;
+			-webkit-text-fill-color : transparent;
+			background-clip         : text;
+		}
+
+		.input-field {
+			width         : 100%;
+			padding       : 12px 16px;
+			border        : 1.5px solid var(--border-color);
+			border-radius : var(--radius-sm);
+			font-family   : inherit;
+			font-size     : 14px;
+			color         : var(--text-main);
+			background    : #FFFFFF;
+			transition    : var(--transition);
+			margin-bottom : 12px;
+			outline       : none;
+		}
+
+		.input-field:focus {
+			border-color : var(--primary);
+			box-shadow   : 0 0 0 3px rgba(99, 102, 241, 0.1);
+		}
+
+		.input-field::placeholder {
+			color : var(--text-muted);
+		}
+
+		/* Date Input Specific */
+		.date-input {
+			cursor               : pointer;
+			background           : linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+			font-family          : 'Vazirmatn', monospace;
+			text-align           : center;
+			font-variant-numeric : tabular-nums;
+			font-weight          : 500;
+		}
+
+		.date-input:hover {
+			background   : linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+			border-color : var(--primary);
+		}
+
+		/* Buttons */
+		.btn {
+			display         : inline-flex;
+			align-items     : center;
+			justify-content : center;
+			gap             : 8px;
+			padding         : 10px 16px;
+			border          : none;
+			border-radius   : var(--radius-sm);
+			font-family     : inherit;
+			font-size       : 14px;
+			font-weight     : 600;
+			cursor          : pointer;
+			transition      : var(--transition);
+			outline         : none;
+			position        : relative;
+			overflow        : hidden;
+		}
+
+		.btn:active {
+			transform : scale(0.97);
+		}
+
+		.btn-primary {
+			background : linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+			color      : #FFFFFF;
+			width      : 100%;
+			box-shadow : 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+		}
+
+		.btn-primary:hover {
+			background : linear-gradient(135deg, var(--primary-hover) 0%, #7C3AED 100%);
+			transform  : translateY(-1px);
+		}
+
+		.btn-success {
+			background : linear-gradient(135deg, var(--success) 0%, #059669 100%);
+			color      : #FFFFFF;
+			box-shadow : 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+		}
+
+		.btn-success:hover {
+			background : linear-gradient(135deg, var(--success-hover) 0%, #047857 100%);
+			transform  : translateY(-1px);
+		}
+
+		.btn-danger {
+			background : linear-gradient(135deg, var(--danger) 0%, #DC2626 100%);
+			color      : #FFFFFF;
+			box-shadow : 0 4px 6px -1px rgba(239, 68, 68, 0.3);
+		}
+
+		.btn-danger:hover {
+			background : linear-gradient(135deg, var(--danger-hover) 0%, #B91C1C 100%);
+			transform  : translateY(-1px);
+		}
+
+		.btn-secondary {
+			background : #F1F5F9;
+			color      : var(--text-secondary);
+			border     : 1px solid var(--border-color);
+		}
+
+		.btn-secondary:hover {
+			background   : #E2E8F0;
+			border-color : var(--border-hover);
+		}
+
+		.btn-text {
+			background  : transparent;
+			color       : var(--primary);
+			padding     : 6px 10px;
+			font-weight : 500;
+		}
+
+		.btn-text:hover {
+			background    : var(--primary-light);
+			border-radius : var(--radius-sm);
+		}
+
+		.btn-large {
+			padding       : 14px 24px;
+			font-size     : 16px;
+			font-weight   : 700;
+			border-radius : var(--radius);
+		}
+
+		.btn-small {
+			padding   : 6px 12px;
+			font-size : 12px;
+		}
+
+		.status-text {
+			font-size     : 13px;
+			text-align    : center;
+			margin-bottom : 12px;
+			min-height    : 20px;
+			color         : var(--text-secondary);
+		}
+
+		.status-message {
+			padding       : 12px 16px;
+			border-radius : var(--radius-sm);
+			text-align    : center;
+			font-size     : 13px;
+			font-weight   : 500;
+			display       : none;
+			border        : 1px solid transparent;
+		}
+
+		.status-message.success {
+			background   : var(--success-light);
+			color        : #065F46;
+			display      : block;
+			border-color : #A7F3D0;
+		}
+
+		.status-message.error {
+			background   : var(--danger-light);
+			color        : #991B1B;
+			display      : block;
+			border-color : #FECACA;
+		}
+
+		.status-message.info {
+			background   : var(--primary-light);
+			color        : #3730A3;
+			display      : block;
+			border-color : #C7D2FE;
+		}
+
+		/* Header */
+		.header {
+			display         : flex;
+			justify-content : space-between;
+			align-items     : center;
+			margin-bottom   : 16px;
+			padding-bottom  : 12px;
+			border-bottom   : 1px solid var(--border-color);
+		}
+
+		.user-name {
+			font-weight : 700;
+			color       : var(--text-main);
+			font-size   : 15px;
+		}
+
+		/* Timer Card */
+		.timer-card {
+			text-align : center;
+			padding    : 32px 24px;
+		}
+
+		.timer-display {
+			font-size            : 52px;
+			font-weight          : 800;
+			font-variant-numeric : tabular-nums;
+			color                : var(--text-main);
+			margin-bottom        : 28px;
+			letter-spacing       : 2px;
+			font-family          : 'Vazirmatn', monospace;
+		}
+
+		.timer-display.running {
+			color     : var(--success);
+			animation : pulse 2s infinite;
+		}
+
+		@keyframes pulse {
+			0% {
+				opacity   : 1;
+				transform : scale(1);
+			}
+			50% {
+				opacity   : 0.85;
+				transform : scale(1.02);
+			}
+			100% {
+				opacity   : 1;
+				transform : scale(1);
+			}
+		}
+
+		.timer-actions {
+			display         : flex;
+			gap             : 12px;
+			justify-content : center;
+		}
+
+		/* Finalize State */
+		.time-summary {
+			background    : linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
+			border-radius : var(--radius);
+			padding       : 20px;
+			margin-bottom : 20px;
+			text-align    : right;
+			border        : 1px solid var(--border-color);
+		}
+
+		.time-item {
+			display         : flex;
+			justify-content : space-between;
+			align-items     : center;
+			margin-bottom   : 14px;
+			gap             : 12px;
+		}
+
+		.time-item:last-child {
+			margin-bottom : 0;
+		}
+
+		.time-item label {
+			font-size   : 13px;
+			color       : var(--text-secondary);
+			font-weight : 600;
+			min-width   : 70px;
+		}
+
+		.time-item .input-field {
+			margin-bottom : 0;
+			flex          : 1;
+		}
+
+		.time-value.duration {
+			color         : var(--primary);
+			font-size     : 17px;
+			background    : var(--primary-light);
+			padding       : 4px 12px;
+			border-radius : 20px;
+			font-weight   : 700;
+		}
+
+		.form-group {
+			margin-bottom : 16px;
+			text-align    : right;
+		}
+
+		.form-group label {
+			display       : block;
+			font-size     : 13px;
+			font-weight   : 600;
+			color         : var(--text-secondary);
+			margin-bottom : 8px;
+		}
+
+		/* Logs Card */
+		.logs-card {
+			padding : 16px;
+		}
+
+		.logs-header {
+			display         : flex;
+			justify-content : space-between;
+			align-items     : center;
+			margin-bottom   : 16px;
+			padding-bottom  : 12px;
+			border-bottom   : 1px solid var(--border-color);
+		}
+
+		.logs-header h3 {
+			font-size   : 16px;
+			font-weight : 700;
+			color       : var(--text-main);
+		}
+
+		.log-list {
+			max-height     : 320px;
+			overflow-y     : auto;
+			display        : flex;
+			flex-direction : column;
+			gap            : 10px;
+			padding-left   : 4px;
+		}
+
+		.log-list::-webkit-scrollbar {
+			width : 6px;
+		}
+
+		.log-list::-webkit-scrollbar-track {
+			background : transparent;
+		}
+
+		.log-list::-webkit-scrollbar-thumb {
+			background    : var(--border-color);
+			border-radius : 3px;
+		}
+
+		.log-item {
+			background            : linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+			border-radius         : var(--radius-sm);
+			padding               : 14px;
+			display               : grid;
+			grid-template-columns : 1fr auto;
+			gap                   : 10px;
+			align-items           : center;
+			font-size             : 13px;
+			transition            : var(--transition);
+			border                : 1px solid var(--border-color);
+		}
+
+		.log-item:hover {
+			border-color : var(--primary);
+			box-shadow   : var(--shadow-sm);
+			transform    : translateY(-1px);
+		}
+
+		.log-item.editing {
+			background            : linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+			border                : 2px solid #93C5FD;
+			grid-template-columns : 1fr;
+		}
+
+		.log-item .log-details {
+			display        : flex;
+			flex-direction : column;
+			gap            : 6px;
+		}
+
+		.log-item .log-task {
+			font-weight : 700;
+			color       : var(--text-main);
+			font-size   : 14px;
+		}
+
+		.log-item .log-time {
+			color                : var(--text-secondary);
+			font-variant-numeric : tabular-nums;
+			font-size            : 12px;
+			font-family          : 'Vazirmatn', monospace;
+		}
+
+		.log-item .log-duration {
+			color         : var(--primary);
+			font-weight   : 700;
+			font-size     : 13px;
+			background    : var(--primary-light);
+			padding       : 4px 10px;
+			border-radius : 16px;
+		}
+
+		.log-item .log-actions {
+			display     : flex;
+			align-items : center;
+			gap         : 8px;
+		}
+
+		.edit-fields {
+			display        : flex;
+			flex-direction : column;
+			gap            : 10px;
+			margin-bottom  : 12px;
+		}
+
+		.edit-fields label {
+			font-size     : 12px;
+			color         : var(--text-secondary);
+			font-weight   : 600;
+			margin-bottom : 4px;
+		}
+
+		.edit-fields input {
+			padding       : 10px 12px;
+			border        : 1.5px solid var(--border-color);
+			border-radius : var(--radius-sm);
+			font-family   : inherit;
+			font-size     : 13px;
+			outline       : none;
+			background    : #FFFFFF;
+			transition    : var(--transition);
+		}
+
+		.edit-fields input:focus {
+			border-color : var(--primary);
+			box-shadow   : 0 0 0 3px rgba(99, 102, 241, 0.1);
+		}
+
+		.edit-duration {
+			display       : inline-block;
+			background    : var(--primary-light);
+			color         : var(--primary);
+			padding       : 6px 12px;
+			border-radius : 16px;
+			font-weight   : 700;
+			font-size     : 13px;
+			margin-top    : 4px;
+		}
+
+		.no-logs {
+			text-align : center;
+			color      : var(--text-muted);
+			padding    : 30px 20px;
+			font-size  : 13px;
+			font-style : italic;
+		}
+	</style>
+</head>
+<body>
+<div class="app-container">
+	<!-- Login Section -->
+	<div id="loginCard" class="card login-card">
+		<h2>⏱ ثبت زمان هوشمند</h2>
+		<input type="text" id="usernameInput" placeholder="نام کاربری" class="input-field">
+		<input type="password" id="passwordInput" placeholder="رمز عبور" class="input-field">
+		<div id="loginStatus" class="status-text"></div>
+		<button id="loginBtn" class="btn btn-primary">ورود به سیستم</button>
+	</div>
+	
+	<!-- Main Section -->
+	<div id="mainSection" class="main-section" style="display: none;">
+		<div class="header">
+			<span id="userDisplay" class="user-name"></span>
+			<button id="logoutBtn" class="btn btn-text">خروج</button>
+		</div>
+		
+		<!-- Timer Area -->
+		<div id="timerArea" class="card timer-card">
+			<!-- Idle State -->
+			<div id="stateIdle" class="state">
+				<div class="timer-display">00:00:00</div>
+				<button id="startBtn" class="btn btn-success btn-large">
+					<span class="icon">▶</span> شروع کار
+				</button>
+			</div>
+			
+			<!-- Running State -->
+			<div id="stateRunning" class="state" style="display: none;">
+				<div id="runningTimer" class="timer-display running">00:00:00</div>
+				<div class="timer-actions">
+					<button id="stopBtn" class="btn btn-danger btn-large">
+						<span class="icon">⏹</span> توقف
+					</button>
+					<button id="cancelBtn" class="btn btn-secondary">
+						<span class="icon">✕</span> لغو
+					</button>
+				</div>
+			</div>
+			
+			<!-- Finalize State -->
+			<div id="stateFinalize" class="state" style="display: none;">
+				<div class="time-summary">
+					<div class="time-item">
+						<label>شروع:</label>
+						<input type="text" id="finalStart" class="input-field date-input" data-jdp>
+					</div>
+					<div class="time-item">
+						<label>پایان:</label>
+						<input type="text" id="finalEnd" class="input-field date-input" data-jdp>
+					</div>
+					<div class="time-item">
+						<label>مدت زمان:</label>
+						<span id="finalDuration" class="time-value duration"></span>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label>پروژه</label>
+					<select id="newProjectSelect" class="input-field"></select>
+				</div>
+				
+				<div class="form-group">
+					<label>تسک</label>
+					<select id="newTaskSelect" class="input-field"></select>
+					<button id="addTaskBtn" class="btn btn-text btn-small" style="margin-top: 8px;">+ ساخت تسک جدید
+					</button>
+				</div>
+				
+				<button id="submitLogBtn" class="btn btn-primary btn-large">
+					<span class="icon">✓</span> ثبت نهایی
+				</button>
+			</div>
+		</div>
+		
+		<!-- Status Message -->
+		<div id="status" class="status-message"></div>
+		
+		<!-- Recent Logs Section -->
+		<div class="card logs-card">
+			<div class="logs-header">
+				<h3>📋 لاگ‌های اخیر</h3>
+				<button id="refreshLogsBtn" class="btn btn-text btn-small">🔄 بروزرسانی</button>
+			</div>
+			<div id="recentLogListContainer" class="log-list">
+				<div class="no-logs">در حال بارگذاری...</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Jalali Datepicker JS -->
+<script src="jalalidatepicker.min.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
