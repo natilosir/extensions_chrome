@@ -230,7 +230,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	}
 
 	function showIdleState() {
-		stateIdle.style.display      = 'block';
+		stateIdle.style.display      = 'flex';
 		stateRunning.style.display   = 'none';
 		stateFinalize.style.display  = 'none';
 		idleTimerDisplay.textContent = '00:00:00';
@@ -239,7 +239,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 	function showRunningState() {
 		stateIdle.style.display     = 'none';
-		stateRunning.style.display  = 'block';
+		stateRunning.style.display  = 'flex';
 		stateFinalize.style.display = 'none';
 		startTimerInterval();
 	}
@@ -392,7 +392,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 						loadRecentLogs();
 					} );
 				} else {
-					setLoginStatus( 'خطا: ' + ( data.message || 'نام کاربری یا رمز عبور اشتباه است.' ), true );
+					setLoginStatus( data.message.replace( /<[^>]*>/g, '' ) || 'نام کاربری یا رمز عبور اشتباه است.', true );
 				}
 			} )
 			.catch( err => {
@@ -614,12 +614,12 @@ document.addEventListener( 'DOMContentLoaded', function() {
                                 <label>پایان:</label>
                                 <input type="text" class="edit-end date-input" data-jdp value="${log.end_local || ''}">
                             </div>
-                            <div>
-                                <label>مدت زمان:</label>
-                                <span class="edit-duration">${calculateDurationFromJalali( log.start_local, log.end_local )}</span>
-                            </div>
                         </div>
-                        <div class="log-actions" style="justify-content: flex-end;">
+                        <div class="log-actions">
+                        <div>
+                            <label>مدت زمان:</label>
+                            <span class="edit-duration">${calculateDurationFromJalali( log.start_local, log.end_local )}</span>
+                        </div>
                             <button class="btn btn-success btn-small save-btn" data-id="${log.id}">💾 ذخیره</button>
                             <button class="btn btn-secondary btn-small cancel-btn" data-id="${log.id}">✕ انصراف</button>
                         </div>
