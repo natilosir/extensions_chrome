@@ -1,11 +1,25 @@
 pre.sf-dump {
-
 	font-family : 'fira code' !important;
 	direction   : ltr !important;
+	text-align  : left;
+	text-shadow : none;
+}
+
+pre.sf-dump::selection {
+	background-color : #F5F5F5;
+	color            : #1A1A1A;
+	text-shadow      : none;
+}
+
+pre.sf-dump::-moz-selection {
+	background-color : #F5F5F5;
+	color            : #1A1A1A;
+	text-shadow      : none;
 }
 
 pre.sf-dump .sf-dump-default {
-	direction : ltr !important;
+	direction  : ltr !important;
+	text-align : left;
 }
 
 pre.sf-dump .sf-dump-note {
