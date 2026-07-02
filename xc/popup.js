@@ -31,6 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	const newTaskSelect    = document.getElementById( 'newTaskSelect' );
 	const addTaskBtn       = document.getElementById( 'addTaskBtn' );
 	const submitLogBtn     = document.getElementById( 'submitLogBtn' );
+	const deleteTimerBtn   = document.getElementById( 'deleteTimerBtn' );
 
 	// Logs Elements
 	const recentLogListContainer = document.getElementById( 'recentLogListContainer' );
@@ -600,7 +601,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		let html = '';
 		logs.forEach( log => {
 			const isEditing   = ( editingLogId === log.id );
-			const timeDisplay = log.end_local ? `${log.start_local} تا ${log.end_local}` : log.start_local;
+			const timeDisplay = log.end_local ? `${log.start_local} => ${log.end_local}` : log.start_local;
 
 			if ( isEditing ) {
 				html += `
@@ -620,8 +621,10 @@ document.addEventListener( 'DOMContentLoaded', function() {
                             <label>مدت زمان:</label>
                             <span class="edit-duration">${calculateDurationFromJalali( log.start_local, log.end_local )}</span>
                         </div>
-                            <button class="btn btn-success btn-small save-btn" data-id="${log.id}">💾 ذخیره</button>
-                            <button class="btn btn-secondary btn-small cancel-btn" data-id="${log.id}">✕ انصراف</button>
+	                        <div>
+	                            <button class="btn btn-success btn-small save-btn" data-id="${log.id}">💾 ذخیره</button>
+	                            <button class="btn btn-secondary btn-small cancel-btn" data-id="${log.id}">✕ انصراف</button>
+	                        </div>
                         </div>
                     </div>
                 `;
@@ -634,7 +637,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
                         </div>
                         <div class="log-actions">
                             <span class="log-duration">${formatDuration( log.minutes )}</span>
-                            <button class="btn btn-text btn-small edit-btn" data-id="${log.id}">✏️ ویرایش</button>
+                            <button class="btn btn-text edit-btn" data-id="${log.id}">✏️</button>
                         </div>
                     </div>
                 `;
@@ -737,6 +740,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	startBtn.addEventListener( 'click', startTimer );
 	stopBtn.addEventListener( 'click', stopTimer );
 	cancelBtn.addEventListener( 'click', cancelTimer );
+	deleteTimerBtn.addEventListener( 'click', cancelTimer );
 	submitLogBtn.addEventListener( 'click', submitLog );
 	refreshLogsBtn.addEventListener( 'click', loadRecentLogs );
 

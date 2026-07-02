@@ -3,10 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ثبت زمان هوشمند</title>
-	<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css"/>
-	
-	<!-- Jalali Datepicker CSS -->
-	<link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+	<link rel="stylesheet" href="jalalidatepicker.min.css">
 	
 	<style>
 		:root {
@@ -50,7 +47,7 @@
 			direction   : rtl;
 			width       : 466px;
 			height      : 900px;
-			padding     : 16px;
+			padding     : 9px;
 			font-size   : 14px;
 			line-height : 1.6;
 		}
@@ -209,8 +206,8 @@
 		}
 
 		.btn-large {
-			padding       : 14px 24px;
-			font-size     : 16px;
+			padding       : 10px 21px;
+			font-size     : 15px;
 			font-weight   : 700;
 			border-radius : var(--radius);
 		}
@@ -265,9 +262,7 @@
 			display         : flex;
 			justify-content : space-between;
 			align-items     : center;
-			margin-bottom   : 16px;
-			padding-bottom  : 12px;
-			border-bottom   : 1px solid var(--border-color);
+			padding-bottom  : 6px;
 		}
 
 		.user-name {
@@ -287,7 +282,7 @@
 			font-variant-numeric : tabular-nums;
 			color                : var(--text-main);
 			letter-spacing       : 2px;
-			font-family          : 'iransans', monospace;
+			font-family          : 'fira code', monospace;
 		}
 
 		.timer-display.running {
@@ -366,6 +361,8 @@
 		}
 
 		.time-item .input-field {
+			direction     : ltr;
+			font-family   : iransans;
 			margin-bottom : 0;
 			flex          : 1;
 		}
@@ -394,8 +391,7 @@
 
 		/* Logs Card */
 		.logs-card, .status-message.success {
-			margin  : 14px 0;
-			padding : 16px;
+			margin : 14px 0;
 		}
 
 		.logs-header {
@@ -468,14 +464,16 @@
 		.log-item .log-task {
 			font-weight : 700;
 			color       : var(--text-main);
-			font-size   : 12px;
+			font-size   : 13px;
 		}
 
 		.log-item .log-time {
 			color                : var(--text-secondary);
 			font-variant-numeric : tabular-nums;
 			font-size            : 12px;
-			font-family          : 'Vazirmatn', monospace;
+			text-align           : end;
+			direction            : ltr;
+			font-family          : 'fira code', monospace;
 		}
 
 		.log-item .log-duration {
@@ -509,6 +507,7 @@
 		}
 
 		.edit-fields input {
+			direction     : ltr;
 			padding       : 9px 0;
 			border        : 1.5px solid var(--border-color);
 			border-radius : var(--radius-sm);
@@ -616,9 +615,14 @@
 					</button>
 				</div>
 				
-				<button id="submitLogBtn" class="btn btn-primary btn-large">
-					<span class="icon">✓</span> ثبت نهایی
-				</button>
+				<div style="display: flex; gap: 12px;">
+					<button id="submitLogBtn" class="btn btn-primary btn-large" style="flex: 1;">
+						<span class="icon">✓</span> ثبت نهایی
+					</button>
+					<button id="deleteTimerBtn" class="btn btn-danger btn-large" style="flex: 1;">
+						<span class="icon">✕</span> حذف
+					</button>
+				</div>
 			</div>
 		</div>
 		
