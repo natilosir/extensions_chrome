@@ -65,7 +65,8 @@
 	},
 	{
 	  "matches":[
-		"https://chat.qwen.ai/*"
+		"https://chat.qwen.ai/*",
+		"https://coder.qwen.ai/*"
 	  ],
 	  "css":[
 		"qwen.css"

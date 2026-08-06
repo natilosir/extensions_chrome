@@ -1,27 +1,25 @@
 .text-token-text-secondary.relative.mt-auto.flex.min-h-8.w-full.items-center.justify-center.p-2.text-center.text-xs.md\:px-\[60px\],
 .text-token-text-secondary .min-h-4 div,
-.draggable .flex-col .py-2,
 .absolute.bottom-full.left-0.right-0.z-20 {
-    display: none;
+	display : none;
 }
 
 div.m-auto {
-    margin-bottom: -10px !important;
+	margin-bottom : -10px !important;
 }
 
 html body .cm-line,
 html body code,
 html body pre {
-    text-align: left !important;
-    font-size: 13.5px;
-    font-family: 'Fira Code' !important;
+	text-align  : left !important;
+	font-size   : 13.5px;
+	font-family : 'Fira Code' !important;
 }
 
-
 .truncate, .flex, .text-token-text-primary, strong, .markdown p, ul, h1, h2, h3, h4, h5, h6, .whitespace-pre-wrap, .hljs-comment, .whitespace-nowrap {
-    font-family: iransans;
+	font-family : iransans;
 }
 
 .\@\[64rem\]\:\[--thread-content-max-width\:48rem\] {
-    --thread-content-max-width: 61rem !important;
+	--thread-content-max-width : 61rem !important;
 }

@@ -5,7 +5,7 @@
 	font-style  : normal;
 }
 
-.h-full, form, textarea, .chat-messages, .mtk12, .folder-content {
+.h-full, form, textarea, .chat-viewer-messages, .task-content-block, .chat-messages, .mtk12, .folder-content {
 	font-family : 'iransans' !important;
 }
 
