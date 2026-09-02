@@ -1,8 +1,9 @@
 pre.sf-dump {
-	font-family : 'fira code' !important;
-	direction   : ltr !important;
-	text-align  : left;
-	text-shadow : none;
+	font-family      : 'fira code' !important;
+	background-color : #000000 !important;
+	direction        : ltr !important;
+	text-align       : left;
+	text-shadow      : none;
 }
 
 pre.sf-dump::selection {
