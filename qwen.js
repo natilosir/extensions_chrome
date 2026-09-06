@@ -8,8 +8,8 @@ function removeAllComments() {
 const button                 = document.createElement( 'button' );
 button.innerText             = 'LTR';
 button.style.position        = 'fixed';
-button.style.top             = '10px';
-button.style.right           = '10px';
+button.style.top             = '14px';
+button.style.right           = '47px';
 button.style.padding         = '10px 20px';
 button.style.backgroundColor = '#4D6BFE';
 button.style.color           = 'white';

@@ -10,7 +10,7 @@
 }
 
 .fixed.bottom-0.right-0.px-2.py-2.z-20,
-.line-clamp-1,
+.line-clamp-1, .chat-container-statement,
 .text-gray-600 img,
 .px-1.mb-1.flex.justify-center.space-x-2.relative.z-10,
 .w-full.py-1\.5.px-2.rounded-md.flex.items-center.gap-1\.5.text-xs,
