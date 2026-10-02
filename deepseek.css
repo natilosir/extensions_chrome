@@ -30,7 +30,7 @@ strong, .ds-textarea .ds-textarea__textarea, .ds-markdown p, .token.comment, h1,
 	padding-left : 0px !important;
 }
 
-.md-code-block, .md-code-blockfira, .token {
+.md-code-block, .md-code-blockfira, .token, .ds-markdown code {
 	text-align  : left;
 	direction   : ltr;
 	font-family : 'FiraCode' !important;
